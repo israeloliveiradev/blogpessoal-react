@@ -1,9 +1,11 @@
-<!--<p align="center">
+<!--
+<p align="center">
     <em>
         (Coloque uma imagem que represente o seu Projeto)<br>
         (Insert an image that represents your Project)
     </em>
-</p> -->
+</p>
+-->
 
 <br/>
 <h1 align="center">Blog Pessoal Front-End</h1>
@@ -14,13 +16,13 @@
         <img src="https://img.shields.io/static/v1?label=Author&message=Israel&color=00ba6d&style=for-the-badge&logo=LinkedIn" alt="Author:Israel">
     </a>
     <a href="#">
-        <img src="https://img.shields.io/static/v1?label=Language&message=JavaScript&color=yellow&style=for-the-badge&logo=JavaScript" alt="Language: JavaScript">
+        <img src="https://img.shields.io/static/v1?label=Language&message=TypeScript&color=blue&style=for-the-badge&logo=TypeScript" alt="Language: TypeScript">
     </a>
     <a href="#">
-        <img src="https://img.shields.io/static/v1?label=Framework&message=React&color=61dafb&style=for-the-badge&logo=React" alt="Framework: React">
+        <img src="https://img.shields.io/static/v1?label=Framework&message=React&color=61DAFB&style=for-the-badge&logo=React" alt="Framework: React">
     </a>
     <a href="#">
-        <img src="https://img.shields.io/static/v1?label=Deployment&message=Vercel&color=black&style=for-the-badge&logo=Vercel" alt="Deployment: Vercel">
+        <img src="https://img.shields.io/static/v1?label=Build&message=Vite&color=646CFF&style=for-the-badge&logo=Vite" alt="Build: Vite">
     </a>
     </p>
 </div>
@@ -33,8 +35,7 @@
  <a href="#improvements">Melhorias em Andamento</a> • 
  <a href="#installation">Instalação</a> • 
  <a href="#technologies">Tecnologias</a> •
- <a href="#prints">Prints</a> •
- <a href="#api">API</a>
+ <a href="#prints">Prints</a>
 </p>
 
 ## 📌 Sobre
@@ -42,9 +43,7 @@
 <div>
     <p align="center">
     <em>
-        O Blog Pessoal Front-End é a interface do usuário para o sistema Blog Pessoal, construído com React. Ele oferece uma experiência rica e interativa para a visualização, criação, edição e exclusão de postagens e temas. É integrado com o back-end via API para fornecer dados e funcionalidades.<br><br>
-        The Blog Pessoal Front-End is the user interface for the Blog Pessoal system, built with React. It provides a rich and interactive experience for viewing, creating, editing, and deleting posts and themes. It integrates with the back-end via API to provide data and functionalities.<br><br>
-    </em>
+        Este é o front-end do projeto Blog Pessoal, desenvolvido com React, TypeScript e Vite. O projeto é uma aplicação SPA (Single Page Application) que se comunica com o back-end desenvolvido em Java e Spring Boot. O front-end oferece uma interface moderna e responsiva para gerenciar postagens e temas do blog, com autenticação e funcionalidades de CRUD.</em>
     </p>
 </div>
 
@@ -52,20 +51,11 @@
 
 <p align="center">
 
-- **Visualização de Postagens e Temas:**
-  - Exiba postagens e temas existentes com uma interface amigável.
-- **Criação de Postagens e Temas:**
-  - Formulários interativos para criar novas postagens e temas.
-- **Edição de Postagens e Temas:**
-  - Atualize postagens e temas existentes com um formulário de edição.
-- **Exclusão de Postagens e Temas:**
-  - Remova postagens e temas que não são mais necessários.
-- **Integração com API:**
-  - Conecta-se ao back-end para obter e enviar dados através de chamadas API.
-- **Autenticação de Usuário:**
-  - Formulários de login e registro para autenticar usuários.
-- **Responsividade:**
-  - Interface responsiva que funciona bem em dispositivos móveis e desktop.
+- **Interface de Usuário Moderna**: Desenvolvida com React para uma experiência interativa e responsiva.
+- **Type Safety**: Utiliza TypeScript para garantir a segurança de tipos e evitar erros comuns.
+- **Desenvolvimento Rápido**: Vite proporciona recarregamento rápido e construção eficiente.
+- **Integração com o Back-End**: Conecta-se ao back-end do Blog Pessoal para gerenciamento de postagens e temas.
+- **Autenticação de Usuário**: Interface para login e registro de usuários, com base na API do back-end.
 
 </p>
 
@@ -73,9 +63,9 @@
 
 <p align="center">
 
-- Implementação de novos componentes de UI/UX para melhorar a experiência do usuário.
-- Adição de funcionalidades como filtros e busca avançada.
-- Melhorias na performance e otimização do aplicativo.
+- Expansão de funcionalidades da interface para suportar mais recursos do back-end.
+- Melhoria na responsividade e acessibilidade da aplicação.
+- Adição de testes automatizados para garantir a qualidade e a funcionalidade do front-end.
 
 </p>
 
@@ -85,12 +75,7 @@
 </p>
 
 **Você deve ter instalado previamente.**
-- [Node.js](https://nodejs.org/) (para gerenciar pacotes e executar scripts)
-- [npm](https://www.npmjs.com/) (gerenciador de pacotes para instalar dependências)
-
-**Recomendações**
-- É recomendado que você tenha instalado o Google Chrome ou o Edge.
-- Eu recomendo usar uma IDE como Visual Studio Code para desenvolvimento.
+- [Node.js](https://nodejs.org/) (inclui npm)
 
 **Vamos dividir isso em 3 etapas.**
 1. Clonar este repositório
@@ -98,6 +83,11 @@
 3. Inicializar o Front-End
 
 ### 1. Clone esse repositório
+
+```bash
+git clone https://github.com/seuusuario/blog-pessoal-front-end.git
+cd blog-pessoal-front-end
+
 
 ### 2. Instale as dependências
 Navegue até o diretório do projeto e execute:
