@@ -1,12 +1,17 @@
-import Home from "./pages/home/Home"
+import React from 'react'
+
+import Navbar from './components/navbar/Navbar'
+
+
 
 
 function App() {
-  
 
   return (
-    <Home/>
+    <>
+    <Navbar />
+    </>
+
   )
 }
-
 export default App
