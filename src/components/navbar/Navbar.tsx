@@ -1,7 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { UserCircle, MagnifyingGlass, List } from '@phosphor-icons/react';
+import { UserCircle, MagnifyingGlass, List, Plus } from '@phosphor-icons/react';
+
+
 
 function Navbar() {
+
+
+
+
+
+
     const [userDropdownOpen, setUserDropdownOpen] = useState<boolean>(false);
     const [menuDropdownOpen, setMenuDropdownOpen] = useState<boolean>(false);
 
@@ -39,6 +47,7 @@ function Navbar() {
         console.log('User dropdown open:', userDropdownOpen);
         console.log('Menu dropdown open:', menuDropdownOpen);
     }, [userDropdownOpen, menuDropdownOpen]);
+
 
     return (
         <>
@@ -89,24 +98,29 @@ function Navbar() {
             </div>
             <div>
                 {menuDropdownOpen && (
-                    <div className="absolute left-0 h-full bg-gray-800 text-white shadow-lg w-[300px] z-10">
-                        <ul className="flex flex-col">
-                            <li className="hover:bg-gray-700 py-2 px-4 cursor-pointer">Opção 1</li>
+                    <div className="absolute left-0 flex flex-col text-white w-[300px] h-full">
+                        <ul className="bg-gray-800 h-full">
+                            <div className="px-4 py-10 w-full flex justify-center items-center">
+                                <span className='hover:bg-gray-700 py-4 px-5 cursor-pointer flex items-center justify-center gap-2 rounded-full '>
+                                    <Plus size={16} className="a" /> NOVA POSTAGEM
+                                </span>
+                            </div>
+
                             <li className="hover:bg-gray-700 py-2 px-4 cursor-pointer">Opção 2</li>
                             <li className="hover:bg-gray-700 py-2 px-4 cursor-pointer">Opção 3</li>
                         </ul>
-                    </div> 
+                    </div>
                 )}
             </div> {/* MENU DROPDOWN */}
             <div>
-            {userDropdownOpen && (
-                <div className="absolute right-3 mt-2 bg-gray-800 text-white rounded-lg shadow-lg w-[220px] z-10">
-                    <ul className="flex flex-col">
-                        <li className="hover:bg-gray-700 py-2 px-4 cursor-pointer">Alterar Perfil</li>
-                        <li className="border-t border-gray-700 hover:bg-gray-700 py-2 px-4 cursor-pointer">Sair</li>
-                    </ul>
-                </div>
-            )}
+                {userDropdownOpen && (
+                    <div className="absolute right-3 mt-2 bg-gray-800 text-white rounded-lg shadow-lg w-[220px] z-10 transition-all duration-2000">
+                        <ul className="flex flex-col">
+                            <li className="hover:bg-gray-700 py-2 px-4 cursor-pointer">Alterar Perfil</li>
+                            <li className="border-t border-gray-700 hover:bg-gray-700 py-2 px-4 cursor-pointer">Sair</li>
+                        </ul>
+                    </div>
+                )}
             </div> {/* USER DROPDOWN */}
 
         </>
