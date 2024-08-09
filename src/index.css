@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.open-menu{
+@apply w-0 opacity-0 pointer-events-none overflow-hidden;
+
+}
+
+.closed-user-menu{
+  @apply h-0 opacity-0 pointer-events-none overflow-hidden; 
+}
+body{
+  @apply bg-[#ececec]
+}

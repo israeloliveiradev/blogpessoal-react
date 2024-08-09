@@ -1,29 +1,16 @@
-import './Home.css';
+import React, { useState } from 'react';
+
 
 function Home() {
-
-    const handleClick = () => {
-        const image = document.querySelector('.img-principal');
-        if (image) {
-            image.classList.toggle('girar');
-        }
-    };
+    const [count, setCount] = useState<number>(0);
 
     return (
-        <main>
-            <div className='interface'>
-                <div className="foto-israel">
-                    <article><h1>HOME</h1></article>
-                    <img 
-                        src="https://i.im.ge/2024/08/02/fQooFz.FT-ISRAEL.png" 
-                        alt="teste" 
-                        className='img-principal' 
-                        onClick={handleClick} 
-                    />
-                </div>
-            </div>
-        </main>
-    );
+        <div className=''>
+            <h1>Home</h1>
+            <p>{count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+    )
 }
 
 export default Home;
