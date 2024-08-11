@@ -5,7 +5,9 @@ import { User, Lock } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
 function Login() {
+
     return (
+
         <>
             <div className="flex min-h-screen items-center justify-center bg-[#222831]" style={{ background: "url(https://i.im.ge/2024/08/09/f12sSm.eozap.webp)" }}>
 
