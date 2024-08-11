@@ -2,17 +2,17 @@ import React from 'react';
 import Footer from '../../components/footer/Footer';
 
 import { User, Lock } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
 function Login() {
     return (
         <>
-        {/* <Navbar />   */}
             <div className="flex min-h-screen items-center justify-center bg-[#222831]" style={{ background: "url(https://i.im.ge/2024/08/09/f12sSm.eozap.webp)" }}>
 
-                <div className="flex w-[500px] h-[600px] rounded-2xl justify-center items-center bg-[#393e46]">
+                <div className="flex w-[500px] h-[600px] rounded-2xl justify-center items-center  bg-gray-800">
 
                     <form action="" className="flex flex-col items-center justify-center text-[#F2F2F2] gap-2">
-                        <img className='h-[80px] w-[200px]' src="https://i.imgur.com/RFKmfsU.png" alt="Logo" />
+                        <img className='h-[80px] w-[200px]' src="https://i.imgur.com/uYS1EuB.png" alt="Logo" />
                         
                         <label className='' htmlFor="username">
                             <span>Usuario</span>
@@ -28,21 +28,24 @@ function Login() {
                         </label>
 
                         <div className="flex justify-between w-[300px] mt-2 cursor-pointer">
+
                             <span>Esqueci a senha</span>
-                            <span>Cadastrar</span>
+
+                            <Link to="/signup"><span>Cadastrar</span></Link>
+                           
                         </div>
 
+                        <Link to="/home">
                         <label className='py-5' htmlFor="">
                             <button className='bg-[#ff8000] w-40 h-12 rounded-full hover:bg-[#ff9326]' type="submit">Entrar</button>
-                        </label>
+                        </label></Link>
+
                     </form>
                 </div>
             </div>
-            <Footer />
-
         </>
-    );
 
+    );
 
 }
 
