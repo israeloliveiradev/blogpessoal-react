@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserCircle, MagnifyingGlass, List, Plus, PencilSimpleLine, PaintBrushBroad, HandFist } from '@phosphor-icons/react';
 import '../../index.css';
+import { AuthContext } from '../../contexts/AuthContext';
 
 function Navbar() {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -30,9 +31,17 @@ function Navbar() {
         };
     }, [openMenu, openUserMenu]);
 
-    const Login = () => {
-        let navigate = useNavigate()
+    let navigate = useNavigate()
+
+    const { usuario, handleLogout } = useContext(AuthContext)
+  
+    function logout() {
+        handleLogout()
+        alert('Usuário deslogado com sucesso')
+        navigate('/login')
     }
+
+  let navbarComponent
 
     return (
         <>
@@ -130,12 +139,19 @@ function Navbar() {
             <div className={`absolute right-2 top-[125px] z-[100] flex flex-col rounded-xl bg-gray-800 text-white w-[220px] h-[95px] transition-all duration-500 ${openUserMenu ? 'h-[95px]' : 'close-user-menu'}`}>
                 <ul className="flex flex-col py-2">
                     <li className="hover:bg-gray-700 py-2 px-4 cursor-pointer ">Alterar Perfil</li>
-                    <Link to="/login"><li className="hover:bg-gray-700 py-2 px-4 cursor-pointer ">Sair</li></Link>    
+
+                    <Link to="/login" onClick={logout}>
+                        <div className="hover:bg-gray-700 py-2 px-4 cursor-pointer">
+                            Sair
+                        </div>
+                    </Link>
                 </ul>
             </div >
         </>
     );
 
 }
+
+
 
 export default Navbar;
