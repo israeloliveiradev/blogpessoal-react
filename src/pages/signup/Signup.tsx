@@ -71,8 +71,8 @@ function Signup() {
         <>
             <div className="flex min-h-screen items-center justify-center bg-[#222831]" style={{ background: "url(https://i.im.ge/2024/08/09/f12sSm.eozap.webp)" }}>
                 <div className="flex w-[500px] h-[600px] rounded-2xl justify-center items-center  bg-gray-800">
-                    <form onSubmit={cadastrarNovoUsuario} className="flex flex-col items-center justify-center text-[#F2F2F2] gap-2">
-                        <img className='h-[80px] w-[200px]' src="https://i.imgur.com/uYS1EuB.png" alt="Logo" />
+                    <form onSubmit={cadastrarNovoUsuario} className="flex flex-col items-center justify-center text-[#F2F2F2] gap-2 py-3">
+                        <img className='h-[80px] w-[200px] ' src="https://i.imgur.com/uYS1EuB.png" alt="Logo" />
                         
                         <div className="relative w-80">
                             <input

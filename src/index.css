@@ -4,9 +4,9 @@
 
 /* ALL */
 *{
-  margin: 0;
+  /* margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; */
   font-family: "League Spartan";
 }
 
@@ -21,7 +21,16 @@
 }
 
 body{
-  @apply bg-[#ececec] h-[80vh];
+  @apply bg-[#ececec];
 }
 
+.content-wrapper {
+  min-height: calc(100vh - 60px); /* Ajuste 60px para a altura do seu footer */
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
 

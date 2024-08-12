@@ -34,14 +34,15 @@ function Navbar() {
     let navigate = useNavigate()
 
     const { usuario, handleLogout } = useContext(AuthContext)
-  
+
     function logout() {
         handleLogout()
         alert('Usuário deslogado com sucesso')
         navigate('/login')
     }
 
-  let navbarComponent
+
+    let navbarComponent
 
     return (
         <>
@@ -95,7 +96,7 @@ function Navbar() {
                     onClick={() => setOpenMenu(false)}
                 ></div>
             )}
-            <div className={`absolute left-0 flex text-white transition-all duration-1000 h-[90vh] overflow-hidden ${openMenu ? 'w-[280px] ' : 'w-0'}`}>
+            <div className={`absolute left-0 flex text-white transition-all duration-1000 h-[80vh] overflow-hidden ${openMenu ? 'w-[280px] ' : 'w-0'}`}>
                 <div className="px-4 py-10 flex justify-start flex-col bg-[#4583aa] rounded-e-lg z-[990]">
 
                     <button className='bg-[#ed8011] hover:bg-[#fa9a39] py-4 px-2 cursor-pointer flex items-center justify-center gap-2 rounded-full w-[200px]'>
@@ -109,18 +110,24 @@ function Navbar() {
                                 <span className='text-[16px]'>POSTAGENS</span>
                             </div>
                         </li>
+
+                        <Link to="/CadastroTema"><li className="bg-[#4583aa] hover:bg-[#95a9b6] py-2 px-4 cursor-pointer">
+                            <div className='flex items-center gap-2'>
+                                <PaintBrushBroad size={24} />
+                                <span className='text-[16px]'>CADASTRAR TEMA</span>
+                            </div>
+                        </li></Link>
+
+                        <Link to="/temas">
                         <li className="bg-[#4583aa] hover:bg-[#95a9b6] py-2 px-4 cursor-pointer">
                             <div className='flex items-center gap-2'>
                                 <PaintBrushBroad size={24} />
                                 <span className='text-[16px]'>TEMAS</span>
                             </div>
-                        </li>
-                        <li className="bg-[#4583aa] hover:bg-[#95a9b6] py-2 px-4 cursor-pointer">
-                            <div className='flex items-center gap-2'>
-                                <PaintBrushBroad size={24} />
-                                <span className='text-[16px]'>CRIAR TEMA</span>
-                            </div>
-                        </li>
+                        </li></Link>
+
+
+
                         <li className="bg-[#4583aa] hover:bg-[#95a9b6] py-2 px-4 cursor-pointer">
                             <div className='flex items-center gap-2'>
                                 <HandFist size={24} />
