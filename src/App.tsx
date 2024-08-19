@@ -13,6 +13,7 @@ import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPosta
 import Navbar from './components/navbar/Navbar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Perfil from './pages/perfil/Perfil';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/home" element={<Home />} />
               <Route path="/temas" element={<ListaTemas />} />
-              <Route path='/perfil' element={<Home />} />
+              <Route path='/perfil' element={<Perfil />} />
               <Route path="/cadastroTema" element={<FormularioTema />} />
               <Route path="/editarTema/:id" element={<FormularioTema />} />
               <Route path="/deletarTema/:id" element={<DeletarTema />} />
