@@ -1,8 +1,5 @@
-import React, { useContext } from 'react';
-
-
-import Navbar from '../../components/navbar/Navbar'
-import { Link, useNavigate } from 'react-router-dom';
+import  { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import ListaPostagens from '../../components/postagens/listaPostagens/ListaPostagens';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
@@ -10,7 +7,7 @@ import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostage
 const Home = () => {
 
     const { usuario } = useContext(AuthContext);
-    let navigate = useNavigate()
+    // let navigate = useNavigate()
     const nome = usuario.nome
 
     return (

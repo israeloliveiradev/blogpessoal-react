@@ -19,6 +19,7 @@ function FormularioPostagem() {
 
   const [tema, setTema] = useState<Tema>({
     id: 0,
+    autor: '',
     descricao: '',
   });
 

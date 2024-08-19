@@ -1,6 +1,6 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 
-import { User, Lock, At } from '@phosphor-icons/react';
+import { Lock, At } from '@phosphor-icons/react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/AuthContext';
