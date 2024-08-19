@@ -4,8 +4,9 @@ import Usuario from "./Usuario";
 
 export default interface Postagem {
     id: number;
+    titulo: string;
     texto: string;
-    data: Date;
+    data: string;
     tema: Tema | null;  
     usuario: Usuario | null;
 }

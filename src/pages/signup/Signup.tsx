@@ -3,6 +3,7 @@ import { User, Lock, Image, At } from '@phosphor-icons/react';
 import { useNavigate } from 'react-router-dom';
 import Usuario from '../../models/Usuario';
 import { cadastrarUsuario } from '../../services/Service';
+import { toastAlerta } from '../../utils/toastAlerta';
 
 function Signup() {
     let navigate = useNavigate()
@@ -10,62 +11,62 @@ function Signup() {
     const [confirmaSenha, setConfirmaSenha] = useState<string>("")
   
     const [usuario, setUsuario] = useState<Usuario>({
-        id: 0,
-        nome: '',
-        usuario: '',
-        senha: '',
-        foto: ''
+      id: 0,
+      nome: '',
+      usuario: '',
+      senha: '',
+      foto: ''
     })
   
     const [usuarioResposta, setUsuarioResposta] = useState<Usuario>({
-        id: 0,
-        nome: '',
-        usuario: '',
-        senha: '',
-        foto: ''
+      id: 0,
+      nome: '',
+      usuario: '',
+      senha: '',
+      foto: ''
     })
   
     useEffect(() => {
-        if (usuarioResposta.id !== 0) {
-            back()
-        }
+      if (usuarioResposta.id !== 0) {
+        back()
+      }
     }, [usuarioResposta])
-
   
     function back() {
-        navigate('/login')  
+      navigate('/login')
     }
   
     function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
-        setConfirmaSenha(e.target.value)
+      setConfirmaSenha(e.target.value)
     }
   
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-        setUsuario({
-            ...usuario,
-            [e.target.name]: e.target.value
-        })
+      setUsuario({
+        ...usuario,
+        [e.target.name]: e.target.value
+      })
     }
   
     async function cadastrarNovoUsuario(e: ChangeEvent<HTMLFormElement>) {
-        e.preventDefault()
+      e.preventDefault()
   
-        if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
+      if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
   
-            try {
-                await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResposta)
-                alert('Usuário cadastrado com sucesso')
+        try {
+          await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResposta)
+          toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
   
-            } catch (error) {
-                alert('Erro ao cadastrar o Usuário')
-            }
-  
-        } else {
-            alert('Dados inconsistentes. Verifique as informações de cadastro.')
-            setUsuario({ ...usuario, senha: "" }) 
-            setConfirmaSenha("")                  
+        } catch (error) {
+          toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
         }
+  
+      } else {
+        toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.', 'erro')
+        setUsuario({ ...usuario, senha: "" }) 
+        setConfirmaSenha("")                  
+      }
     }
+  
 
     return (
         <>
