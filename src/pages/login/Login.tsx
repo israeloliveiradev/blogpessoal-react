@@ -12,34 +12,34 @@ const Login = () => {
     let navigate = useNavigate();
 
     const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
-        {} as UsuarioLogin
+      {} as UsuarioLogin
     );
-
+  
     const { usuario, handleLogin } = useContext(AuthContext);
-
-    const { isLoading } = useContext(AuthContext)
-
+  
+    const {isLoading} = useContext(AuthContext) 
+  
     useEffect(() => {
-        if (usuario.token !== "") {
-            navigate('/home')
-        }
-    }, [usuario])
-
-    function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-        setUsuarioLogin({
-            ...usuarioLogin,
-            [e.target.name]: e.target.value
-        })
-    }
-
-    function login(e: ChangeEvent<HTMLFormElement>) {
-        e.preventDefault()
-        handleLogin(usuarioLogin)
-    }
-
+      if (usuario.token !== "") {
+          navigate('/home')
+      }
+  }, [usuario])
+  
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+    setUsuarioLogin({
+        ...usuarioLogin,
+        [e.target.name]: e.target.value
+    })
+  }
+  
+  function login(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault()
+    handleLogin(usuarioLogin)
+  }
+  
     return (
         <>
-            <div className="flex min-h-screen items-center justify-center bg-[#222831]" style={{ background: "url(https://i.im.ge/2024/08/09/f12sSm.eozap.webp)" }}>
+            <div className="flex min-h-screen items-center justify-center bg-[#222831]" style={{ background: "url(https://i.im.ge/2024/08/19/fhyrRT.bg-login.webp)" }}>
 
                 <div className="flex w-[500px] h-[600px] rounded-2xl justify-center items-center  bg-gray-800">
 

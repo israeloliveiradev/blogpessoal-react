@@ -4,7 +4,6 @@ import UsuarioLogin from "../models/UsuarioLogin"
 import { login } from "../services/Service"
 import { toastAlerta } from "../utils/toastAlerta"
 
-
 interface AuthContextProps {
     usuario: UsuarioLogin
     handleLogout(): void
@@ -35,7 +34,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setIsLoading(true)
         try {
             await login(`/usuarios/logar`, userLogin, setUsuario)
-            toastAlerta('Você precisa estar logado', 'info');
+            toastAlerta('Usuario Logado com Sucesso!', 'sucesso');
             setIsLoading(false)
 
         } catch (error) {

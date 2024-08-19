@@ -6,69 +6,68 @@ import { cadastrarUsuario } from '../../services/Service';
 import { toastAlerta } from '../../utils/toastAlerta';
 
 function Signup() {
-    let navigate = useNavigate()
+  let navigate = useNavigate()
 
-    const [confirmaSenha, setConfirmaSenha] = useState<string>("")
-  
-    const [usuario, setUsuario] = useState<Usuario>({
-      id: 0,
-      nome: '',
-      usuario: '',
-      senha: '',
-      foto: ''
-    })
-  
-    const [usuarioResposta, setUsuarioResposta] = useState<Usuario>({
-      id: 0,
-      nome: '',
-      usuario: '',
-      senha: '',
-      foto: ''
-    })
-  
-    useEffect(() => {
-      if (usuarioResposta.id !== 0) {
-        back()
-      }
-    }, [usuarioResposta])
-  
-    function back() {
-      navigate('/login')
-    }
-  
-    function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
-      setConfirmaSenha(e.target.value)
-    }
-  
-    function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-      setUsuario({
-        ...usuario,
-        [e.target.name]: e.target.value
-      })
-    }
-  
-    async function cadastrarNovoUsuario(e: ChangeEvent<HTMLFormElement>) {
-      e.preventDefault()
-  
-      if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
-  
-        try {
-          await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResposta)
-          toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
-  
-        } catch (error) {
-          toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
-        }
-  
-      } else {
-        toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.', 'erro')
-        setUsuario({ ...usuario, senha: "" }) 
-        setConfirmaSenha("")                  
-      }
-    }
-  
+  const [confirmaSenha, setConfirmaSenha] = useState<string>("")
 
-    return (
+  const [usuario, setUsuario] = useState<Usuario>({
+    id: 0,
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: ''
+  })
+
+  const [usuarioResposta, setUsuarioResposta] = useState<Usuario>({
+    id: 0,
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: ''
+  })
+
+  useEffect(() => {
+    if (usuarioResposta.id !== 0) {
+      back()
+    }
+  }, [usuarioResposta])
+
+  function back() {
+    navigate('/login')
+  }
+
+  function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
+    setConfirmaSenha(e.target.value)
+  }
+
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+    setUsuario({
+      ...usuario,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  async function cadastrarNovoUsuario(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault()
+
+    if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
+
+      try {
+        await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResposta)
+        toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
+
+      } catch (error) {
+        toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
+      }
+
+    } else {
+      toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.', 'erro')
+      setUsuario({ ...usuario, senha: "" }) // Reinicia o campo de Senha
+      setConfirmaSenha("")                  // Reinicia o campo de Confirmar Senha
+    }
+  }
+
+  return (
         <>
             <div className="flex min-h-screen items-center justify-center bg-[#222831]" style={{ background: "url(https://i.im.ge/2024/08/09/f12sSm.eozap.webp)" }}>
                 <div className="flex w-[500px] h-[600px] rounded-2xl justify-center items-center  bg-gray-800">
