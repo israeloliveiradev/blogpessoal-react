@@ -35,7 +35,7 @@ function Navbar() {
 
     let navigate = useNavigate()
 
-    const { usuario, handleLogout } = useContext(AuthContext)
+    const { handleLogout } = useContext(AuthContext)
 
     function logout() {
         handleLogout()
@@ -44,7 +44,7 @@ function Navbar() {
     }
 
 
-    let navbarComponent
+  
 
     return (
         <>

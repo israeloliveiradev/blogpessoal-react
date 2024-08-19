@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import  { ChangeEvent, useEffect, useState } from 'react';
 import { User, Lock, Image, At } from '@phosphor-icons/react';
 import { useNavigate } from 'react-router-dom';
 import Usuario from '../../models/Usuario';
